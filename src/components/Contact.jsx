@@ -28,7 +28,7 @@ export default function Contact({ darkMode }) {
       } else {
         setStatus({ submitted: false, error: true });
       }
-    } catch (err) {
+    } catch {
       setLoading(false);
       setStatus({ submitted: false, error: true });
     }
@@ -42,8 +42,13 @@ export default function Contact({ darkMode }) {
   };
 
   return (
-    <section className="text-left py-8 sm:py-12" id="contact">
-      <h2 className={`text-xl sm:text-2xl font-black mb-5 sm:mb-6 tracking-tight ${darkMode ? 'text-blue-400' : 'text-blue-950'}`}>Hubungi Saya</h2>
+    <section className="py-12 sm:py-16" id="contact">
+      <div className="max-w-3xl mx-auto">
+        <div className="mb-7 text-center">
+          <span className={`section-badge ${darkMode ? 'section-badge-dark' : ''}`}>Contact</span>
+          <h2 className={`mt-4 text-2xl sm:text-3xl font-bold tracking-tight ${darkMode ? 'text-white' : 'text-slate-900'}`}>Get In Touch</h2>
+          <p className={`block w-full max-w-lg mx-auto mt-3 text-center text-sm sm:text-base leading-7 ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>Have an idea, question, or collaboration in mind? Send a message and let's talk.</p>
+        </div>
       
       {status.submitted ? (
         <div className={`p-6 border rounded-xl text-center mb-8 ${
@@ -56,36 +61,36 @@ export default function Contact({ darkMode }) {
               ? 'bg-emerald-800 text-emerald-300' 
               : 'bg-emerald-100 text-emerald-600'
           }`}>✓</div>
-          <h3 className={`text-lg font-bold mb-1 ${darkMode ? 'text-emerald-300' : 'text-emerald-900'}`}>Pesan Berhasil Terkirim!</h3>
-          <p className={`text-sm mb-4 ${darkMode ? 'text-emerald-400' : 'text-emerald-700'}`}>Terima kasih sudah menghubungi. Saya akan segera merespons pesan Anda.</p>
+          <h3 className={`text-lg font-bold mb-1 ${darkMode ? 'text-emerald-300' : 'text-emerald-900'}`}>Message Sent Successfully!</h3>
+          <p className={`text-sm mb-4 ${darkMode ? 'text-emerald-400' : 'text-emerald-700'}`}>Thank you for reaching out. I'll get back to you as soon as possible.</p>
           <button 
             onClick={() => setStatus({ submitted: false, error: false })}
             className="px-4 py-2 bg-emerald-600 text-white text-sm font-medium rounded-lg hover:bg-emerald-700 transition"
           >
-            Kirim Pesan Lain
+            Send Another Message
           </button>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className="space-y-6 mb-12">
+        <form onSubmit={handleSubmit} className={`space-y-5 p-5 sm:p-7 rounded-2xl border ${darkMode ? 'bg-slate-800/50 border-slate-700' : 'bg-slate-50/80 border-slate-200'}`}>
           {status.error && (
             <div className={`p-4 border rounded-lg text-sm ${
               darkMode 
                 ? 'bg-rose-900/30 border-rose-800 text-rose-300' 
                 : 'bg-rose-50 border-rose-200 text-rose-700'
             }`}>
-              Gagal mengirim pesan. Silakan coba lagi atau gunakan kontak langsung di bawah.
+              Failed to send message. Please try again or use direct contacts below.
             </div>
           )}
           
           <div>
-            <label htmlFor="name" className={`block text-sm font-semibold mb-2 ${darkMode ? 'text-slate-200' : 'text-slate-800'}`}>Nama</label>
+            <label htmlFor="name" className={`block text-sm font-semibold mb-2 ${darkMode ? 'text-slate-200' : 'text-slate-800'}`}>Name</label>
             <input
               type="text"
               id="name"
               name="name"
               value={formData.name}
               onChange={handleChange}
-              placeholder="Nama Anda"
+              placeholder="Your Name"
               className={`w-full px-4 py-2.5 border rounded-lg text-sm outline-none transition ${
                 darkMode 
                   ? 'bg-slate-700 border-slate-600 text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 placeholder:text-slate-400' 
@@ -103,7 +108,7 @@ export default function Contact({ darkMode }) {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="email@contoh.com"
+              placeholder="email@example.com"
               className={`w-full px-4 py-2.5 border rounded-lg text-sm outline-none transition ${
                 darkMode 
                   ? 'bg-slate-700 border-slate-600 text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 placeholder:text-slate-400' 
@@ -114,14 +119,14 @@ export default function Contact({ darkMode }) {
           </div>
           
           <div>
-            <label htmlFor="message" className={`block text-sm font-semibold mb-2 ${darkMode ? 'text-slate-200' : 'text-slate-800'}`}>Pesan</label>
+            <label htmlFor="message" className={`block text-sm font-semibold mb-2 ${darkMode ? 'text-slate-200' : 'text-slate-800'}`}>Message</label>
             <textarea
               id="message"
               name="message"
               value={formData.message}
               onChange={handleChange}
               rows="4"
-              placeholder="Tulis pesan Anda di sini..."
+              placeholder="Write your message here..."
               className={`w-full px-4 py-2.5 border rounded-lg text-sm outline-none resize-y transition ${
                 darkMode 
                   ? 'bg-slate-700 border-slate-600 text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 placeholder:text-slate-400' 
@@ -131,23 +136,23 @@ export default function Contact({ darkMode }) {
             ></textarea>
           </div>
           
-          <div className="pt-2">
+          <div className="pt-1">
             <button
               type="submit"
               disabled={loading}
-              className={`px-6 py-2.5 text-white text-sm font-medium rounded-lg transition shadow-sm disabled:opacity-50 ${
+              className={`px-6 py-2.5 text-white text-sm font-semibold rounded-lg transition shadow-sm disabled:opacity-50 ${
                 darkMode 
-                  ? 'bg-blue-600 hover:bg-blue-700' 
-                  : 'bg-blue-900 hover:bg-blue-950'
+                  ? 'bg-indigo-600 hover:bg-indigo-500' 
+                  : 'bg-indigo-600 hover:bg-indigo-700'
               }`}
             >
-              {loading ? 'Mengirim...' : 'Kirim Pesan'}
+              {loading ? 'Sending...' : 'Send Message'}
             </button>
           </div>
         </form>
       )}
       
-      <div className={`pt-8 border-t flex flex-wrap gap-3 justify-center ${
+      <div className={`mt-7 pt-6 border-t flex flex-wrap gap-3 justify-center ${
         darkMode ? 'border-slate-700' : 'border-slate-100'
       }`}>
         <a href="mailto:naufalmahesa88@gmail.com" className={`p-3 border rounded-lg transition shadow-xs inline-flex items-center justify-center ${
@@ -187,6 +192,7 @@ export default function Contact({ darkMode }) {
             <path fillRule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clipRule="evenodd"/>
           </svg>
         </a>
+      </div>
       </div>
     </section>
   );
