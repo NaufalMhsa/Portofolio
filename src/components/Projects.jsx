@@ -11,6 +11,7 @@ import kpActivityDiagram from '../assets/kp/Activity Diagram Staff ubah password
 import kpSequenceDiagram from '../assets/kp/Sequence Diagram Admin Verifikasi Hapus Dokumen.jpg';
 import webShot810 from '../assets/web/Screenshot (810).png';
 import webShot811 from '../assets/web/Screenshot (811).png';
+import { FileSearch } from 'lucide-react';
 
 const thesisScreenshots = [
   { img: shot579, label: 'Tampilan Login' },
