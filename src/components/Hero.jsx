@@ -99,12 +99,12 @@ export default function Hero({ darkMode }) {
             IPK 3,87. Memiliki pengalaman dalam analisis dan pengembangan sistem
             informasi, mulai dari identifikasi kebutuhan pengguna, perancangan
             sistem, hingga implementasi dan pengujian aplikasi. Memahami
-            Software Development Life Cycle (SDLC), metode Prototype, pemodelan
-            sistem menggunakan UML, serta pengembangan aplikasi dengan React.js,
-            Express.js, dan MySQL. Memiliki minat karier sebagai System Analyst,
-            IT Business Analyst, dan Junior Web Developer, didukung pengalaman
-            kepemimpinan, koordinasi, serta pengelolaan organisasi kemahasiswaan
-            tingkat program studi.
+            Software Development Life Cycle (SDLC), pemodelan sistem menggunakan
+            UML, penyusunan test case, serta pengujian fungsional aplikasi.
+            Memiliki minat karier sebagai System Analyst, IT Business Analyst,
+            dan Software Quality Assurance, didukung pengalaman kepemimpinan,
+            koordinasi, serta pengelolaan organisasi kemahasiswaan tingkat
+            program studi.
           </p>
 
           {/* Info Lokasi & Ketersediaan */}

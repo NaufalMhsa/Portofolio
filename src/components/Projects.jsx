@@ -79,8 +79,8 @@ const projects = [
     category: "FREELANCE PROJECT",
     role: "Web Developer",
     description:
-      "Mengembangkan aplikasi berbasis web untuk mempermudah pencatatan, pemantauan, dan tindak lanjut laporan kedisiplinan maupun bimbingan konseling siswa secara terpusat. Mendukung pengelolaan multi-peran bagi Admin, Guru BK, Wali Kelas, dan Siswa untuk mempercepat alur pelaporan di sekolah.",
-    tags: ["Laravel 12", "Tailwind CSS", "MySQL"],
+      "Mengembangkan aplikasi berbasis web menggunakan Laravel, Tailwind CSS, dan MySQL untuk mempermudah pencatatan, pemantauan, dan tindak lanjut laporan kedisiplinan maupun bimbingan konseling siswa secara terpusat. Mendukung pengelolaan multi-peran bagi Admin, Guru BK, Wali Kelas, dan Siswa, serta melakukan pengujian fungsional menggunakan metode Black Box Testing untuk memastikan kesesuaian fitur dengan kebutuhan sistem.",
+    tags: ["Laravel 12", "Tailwind CSS", "MySQL", "Black Box Testing"],
     icon: ShieldCheck,
     screenshots: webScreenshots,
   },
