@@ -35,7 +35,7 @@ const LinkedinIcon = ({ size = 18 }) => (
 );
 
 export default function Hero({ darkMode }) {
-  const roles = ["System Analyst", "IT Business Analyst", "Web Developer"];
+  const roles = ["System Analyst", "IT Business Analyst", "Software Quality Assurance"];
 
   const socials = [
     {
