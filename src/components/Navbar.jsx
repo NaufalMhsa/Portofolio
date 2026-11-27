@@ -3,7 +3,7 @@ import { Sun, Moon, Menu, X } from 'lucide-react';
 
 export default function Navbar({ darkMode, setDarkMode }) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const navLinks = ['Profile', 'Skills', 'Projects', 'Contact'];
+  const navLinks = ['Profile', 'Skills', 'Projects', 'Experience', 'Contact'];
 
   const handleScroll = (id) => {
     const el = document.getElementById(id.toLowerCase());

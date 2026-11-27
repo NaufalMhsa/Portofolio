@@ -31,6 +31,21 @@ html {
   scroll-behavior: smooth;
 }
 
+@keyframes gallery-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.gallery-page-enter {
+  animation: gallery-fade-in 300ms ease-out both;
+}
+
 .section-badge {
   display: inline-block;
   padding: 4px 16px;
